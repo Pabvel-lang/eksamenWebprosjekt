@@ -1,0 +1,384 @@
+/* momeen sin css*/ 
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  background-color: #3b4a45;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background-color: #3f4f63;
+  border-bottom: 3px solid #1f2833;
+}
+
+.tittel {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #111111;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  padding: 8px 14px;
+  background-color: #2f3c4c;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border: 1px solid #222c38;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #4f637a;
+}
+
+.hovedside {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  min-height: calc(100vh - 68px);
+}
+
+.side-panel {
+  background-color: #3b4a45;
+}
+
+.innhold {
+  background-color: #c8c3bc;
+  border-left: 3px solid #1f2833;
+  border-right: 3px solid #1f2833;
+  padding: 48px 56px 72px;
+}
+
+/* ... */
+
+
+.introMunch {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.intro-tekst p {
+  margin-top: 12px;
+}
+
+.intro-bilde {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.introMunch img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.intro-bilde p {
+  margin-top: 6px;
+}
+
+/*patrick sin css*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  background-color: #3b4a45;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background-color: #3f4f63;
+  border-bottom: 3px solid #1f2833;
+}
+
+.tittel {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #111111;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  padding: 8px 14px;
+  background-color: #2f3c4c;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border: 1px solid #222c38;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #4f637a;
+}
+
+.hovedside {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  min-height: calc(100vh - 68px);
+}
+
+.side-panel {
+  background-color: #3b4a45;
+}
+
+.innhold {
+  background-color: #c8c3bc;
+  border-left: 3px solid #1f2833;
+  border-right: 3px solid #1f2833;
+  padding: 48px 56px 72px;
+}
+
+/*karel sin css*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  background-color: #3b4a45;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background-color: #3f4f63;
+  border-bottom: 3px solid #1f2833;
+}
+
+.tittel {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #111111;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  padding: 8px 14px;
+  background-color: #2f3c4c;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border: 1px solid #222c38;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #4f637a;
+}
+
+.hovedside {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  min-height: calc(100vh - 68px);
+}
+
+.side-panel {
+  background-color: #3b4a45;
+}
+
+.innhold {
+  background-color: #c8c3bc;
+  border-left: 3px solid #1f2833;
+  border-right: 3px solid #1f2833;
+  padding: 48px 56px 72px;
+}
+
+/* ... */
+
+
+.introMunch {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+}
+
+.intro-tekst p {
+  margin-top: 12px;
+}
+
+.intro-bilde {
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.introMunch img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.intro-bilde p {
+  margin-top: 6px;
+}
+
+/*solyana sin css*/
+
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #1a1a1a;
+  background-color: #3b4a45;
+  line-height: 1.6;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+  background-color: #3f4f63;
+  border-bottom: 3px solid #1f2833;
+}
+
+.tittel {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #111111;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+}
+
+nav a {
+  padding: 8px 14px;
+  background-color: #2f3c4c;
+  color: #f0f0f0;
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  border: 1px solid #222c38;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #4f637a;
+}
+
+.hovedside {
+  display: grid;
+  grid-template-columns: 140px 1fr 140px;
+  min-height: calc(100vh - 68px);
+}
+
+.side-panel {
+  background-color: #3b4a45;
+}
+
+.innhold {
+  background-color: #c8c3bc;
+  border-left: 3px solid #1f2833;
+  border-right: 3px solid #1f2833;
+  padding: 48px 56px 72px;
+}
+
+/* kunstverk delen */
+.kunstverk-liste {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.kunstverk {
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-bottom: 2px solid #999;
+  padding: 25px 0;
+}
+
+.kunstverk img {
+  width: 280px;
+  height: 380px;
+  object-fit: contain;
+}
+
+.tekst {
+  flex: 1;
+}
+
+.tekst h2 {
+  margin-bottom: 8px;
+}
+
+/* Gjør oppsettet enklere å lese på små skjermer 
+@media (max-width: 700px) {
+  .kunstverk {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}*/
+
