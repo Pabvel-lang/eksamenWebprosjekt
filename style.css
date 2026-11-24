@@ -1,33 +1,36 @@
-/* momeen sin css*/ 
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-size: 20px;
+}
+
+/* lastet et font fra nettet som blir brukt på headeren */ 
+@font-face {
+  font-family: "MinFont";
+  src: url("Font/PlayfairDisplaySC-Regular.ttf")
 }
 
 body {
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 5px;
   color: #1a1a1a;
   background-color: #3b4a45;
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 14px 32px;
   background-color: #3f4f63;
-  border-bottom: 3px solid #1f2833;
+  border-bottom: 3px solid #00000052;
+  font-family: "Minfont";
 }
 
 .tittel {
-  font-family: Georgia, serif;
-  font-size: 1.8rem;
+  font-size: 50px;
   font-weight: bold;
   color: #111111;
   text-decoration: none;
@@ -39,11 +42,11 @@ nav {
 }
 
 nav a {
+  font-size: 20px;
   padding: 8px 14px;
   background-color: #2f3c4c;
   color: #f0f0f0;
   text-decoration: none;
-  font-size: 0.85rem;
   letter-spacing: 0.5px;
   border: 1px solid #222c38;
   transition: background-color 0.2s ease;
@@ -52,6 +55,13 @@ nav a {
 nav a:hover {
   background-color: #4f637a;
 }
+
+nav a:focus {
+  background-color: #4f637a;
+  border-radius: 1px;
+  color: darkred;
+}
+
 
 .hovedside {
   display: grid;
@@ -97,6 +107,108 @@ nav a:hover {
 
 .intro-bilde p {
   margin-top: 6px;
+}
+
+
+
+.skrik-boks {
+  display: grid;
+  text-align: center;
+}
+
+.skrik-boks img {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 16px auto;
+}
+
+#visSkrik {
+  display: none;
+}
+
+.uskarpBilde,
+.SkrikBilde {
+  grid-area: 1 / 1; /* KI: gjør at bildene ligger rett underhverandre når den transister fra første bildet til andre */
+  transition: 1s;
+
+}
+
+.SkrikBilde,
+#visSkrik:checked ~ .uskarpBilde {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#visSkrik:checked ~ .SkrikBilde {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/* avsluttning teksten  */
+
+
+.avsluttning {
+  margin-top: 40px;
+}
+
+
+.tema-bokser {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.tema-boks {
+  flex: 0 1 calc((100% - 40px) / 3);
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  background-color: #dcd8d2;
+  border: 2px solid #1f2833;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tema-boks:hover {
+  transform: translateY(-4px);
+  background-color: #e6e2dc;
+}
+
+.tema-boks:focus {
+  background-color: #e6e2dc;
+  border-radius: 1px;
+  color: darkred;
+}
+
+.tema-boks img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  margin-top: auto;
+}
+
+.tema-boks img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.tema-boks h3 {
+  padding: 12px 14px 4px;
+}
+
+.tema-boks p {
+  padding: 0 14px 14px;
+  font-size: 0.95rem;
 }
 
 /*patrick sin css*/
@@ -243,7 +355,6 @@ nav a:hover {
   padding: 48px 56px 72px;
 }
 
-/* ... */
 
 
 .introMunch {
@@ -253,24 +364,118 @@ nav a:hover {
   gap: 32px;
 }
 
+.intro-tekst {
+  margin-top: 60px;
+  max-height: 100%;
+  height: auto;
+}
+
 .intro-tekst p {
   margin-top: 12px;
+  gap: 12px;
 }
 
 .intro-bilde {
+  width: 300px;
+  height: auto;
   flex-shrink: 0;
-  text-align: center;
+  border: 12px;
 }
 
 .introMunch img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
+  max-width: 100%;
+  width: 300px;
+  height: auto;
+  position: relative;
+  border-radius: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.introMunch img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .intro-bilde p {
-  margin-top: 6px;
+  transform: translateY(-50px);
+  transition: transform 0.3s ease;
+  visibility: hidden;
+  opacity: 0;
 }
+
+.intro-bilde:hover p {
+  border: 1px solid #1f2833;
+  padding: 6px 12px;
+  border-radius: 4px;
+  margin-top: 8px;
+  text-align: center;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  color: #555;
+  justify-content: center;
+  transform: translateY(0);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  visibility: visible;
+  opacity: 1;
+}
+
+.content-section {
+  margin-bottom: 40px;
+  border: 2px solid #1f2833;
+  max-width: 100%;
+  padding: 20px;
+  width: 400px;
+  position:relative;
+}
+
+.museum-photos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 400px;
+  margin-bottom: 90px;
+}
+
+#museum-photo1,#museum-photo2,#museum-photo3 {
+  max-width: 100%;
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: blur(3px);
+  transition: filter 0.2s ease, transform 0.2s ease;
+}
+
+#museum-photo4 {
+  max-width: 100%;
+  width: 550px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  align-self: center;
+  filter: blur(3px);
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+#museum-photo1:hover,
+#museum-photo2:hover,
+#museum-photo3:hover,
+#museum-photo4:hover {
+  filter: blur(0);
+  transform: scale(1.05);
+}
+
+.photo-section {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  gap: 16px;
+}
+
 
 /*solyana sin css*/
 
@@ -373,12 +578,3 @@ nav a:hover {
 .tekst h2 {
   margin-bottom: 8px;
 }
-
-/* Gjør oppsettet enklere å lese på små skjermer 
-@media (max-width: 700px) {
-  .kunstverk {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}*/
-
