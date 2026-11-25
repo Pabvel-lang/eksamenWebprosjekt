@@ -225,9 +225,12 @@ nav a:focus {
 }
 
 .intro-tekst {
+  flex: 1;
+  min-width: 0;
   margin-top: 60px;
   max-height: 100%;
   height: auto;
+  border-radius: 8px;
 }
 
 .intro-tekst p {
@@ -236,17 +239,21 @@ nav a:focus {
 }
 
 .intro-bilde {
-  width: 300px;
+  position: relative;
+  width: 500px;
+  flex: 0 1 500px;
+  min-width: 0;
   height: auto;
-  flex-shrink: 0;
-  border: 12px;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .introMunch img {
+  display: block;
   max-width: 100%;
-  width: 300px;
+  width: 100%;
+  max-width: 100%;
   height: auto;
-  position: relative;
   border-radius: 8px;
   transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -256,47 +263,59 @@ nav a:focus {
   transition: transform 0.3s ease;
 }
 
+/* tekst som dukker opp når du :hover mus over museum bilde*/
 .intro-bilde p {
-  transform: translateY(-50px);
-  transition: transform 0.3s ease;
-  visibility: hidden;
+  color: #f0f0f0;
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  margin: 0;
+  padding: 6px 12px;
+  border: 1px solid #1f2833;
+  border-radius: 4px;
   opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .intro-bilde:hover p {
-  border: 1px solid #1f2833;
-  padding: 6px 12px;
-  border-radius: 4px;
-  margin-top: 8px;
-  text-align: center;
-  max-width: 100%;
-  width: auto;
-  height: auto;
-  line-height: 1.4;
-  font-size: 0.9rem;
-  color: #555;
-  justify-content: center;
-  transform: translateY(0);
-  transition: transform 0.8s ease, opacity 0.8s ease;
-  visibility: visible;
   opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .content-section {
   margin-bottom: 40px;
   border: 2px solid #1f2833;
   max-width: 100%;
-  padding: 20px;
-  width: 400px;
+  padding: 12px;
+  width: 100%;
+  height: auto;
   position:relative;
 }
 
+.photo-section {
+  display: block;
+  margin-top: 24px;
+  margin-bottom: 20px;
+}
+
 .museum-photos {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  /* KI: gjør at bildene tilpasser seg skjermstørrelsen og holder en minimum bredde på 250px */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 16px;
-  margin-top: 400px;
-  margin-bottom: 90px;
+  margin: 24px 0;
+  margin-bottom: -24px;
+}
+
+/* gjør at bildene tilpasser seg skjermstørrelsen og holder en minimum bredde på 250px. Slik regelen over sier */
+.museum-photos a {
+  display: block;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
 #museum-photo1,#museum-photo2,#museum-photo3 {
@@ -304,7 +323,7 @@ nav a:focus {
   width: 400px;
   height: 250px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   filter: blur(3px);
   transition: filter 0.2s ease, transform 0.2s ease;
 }
@@ -314,26 +333,31 @@ nav a:focus {
   width: 550px;
   height: 350px;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 12px;
   align-self: center;
   filter: blur(3px);
   transition: filter 0.3s ease, transform 0.4s ease;
 }
 
+#museum-photo5 {
+  max-width: 100%;
+  width: 550px;
+  height: auto;
+  object-fit: cover;
+  align-self: center;
+  border-radius: 12px;
+  filter: blur(3px);
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
+
+
 #museum-photo1:hover,
 #museum-photo2:hover,
 #museum-photo3:hover,
-#museum-photo4:hover {
+#museum-photo4:hover,
+#museum-photo5:hover {
   filter: blur(0);
   transform: scale(1.05);
-}
-
-.photo-section {
-  display: flex;
-  align-items: center;
-  margin-top: 12px;
-  margin-bottom: 20px;
-  gap: 16px;
 }
 
 
