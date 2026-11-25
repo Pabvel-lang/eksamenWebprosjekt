@@ -1,14 +1,14 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-size: 20px;
+*{
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-size: 20px;
 }
 
 /* lastet et font fra nettet som blir brukt på headeren */ 
 @font-face {
   font-family: "MinFont";
-  src: url("Font/PlayfairDisplaySC-Regular.ttf")
+  src: url("font/PlayfairDisplaySC-Regular.ttf")
 }
 
 body {
@@ -213,148 +213,8 @@ nav a:focus {
 
 /*patrick sin css*/
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #1a1a1a;
-  background-color: #3b4a45;
-  line-height: 1.6;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 32px;
-  background-color: #3f4f63;
-  border-bottom: 3px solid #1f2833;
-}
-
-.tittel {
-  font-family: Georgia, serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #111111;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 10px;
-}
-
-nav a {
-  padding: 8px 14px;
-  background-color: #2f3c4c;
-  color: #f0f0f0;
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  border: 1px solid #222c38;
-  transition: background-color 0.2s ease;
-}
-
-nav a:hover {
-  background-color: #4f637a;
-}
-
-.hovedside {
-  display: grid;
-  grid-template-columns: 140px 1fr 140px;
-  min-height: calc(100vh - 68px);
-}
-
-.side-panel {
-  background-color: #3b4a45;
-}
-
-.innhold {
-  background-color: #c8c3bc;
-  border-left: 3px solid #1f2833;
-  border-right: 3px solid #1f2833;
-  padding: 48px 56px 72px;
-}
 
 /*karel sin css*/
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #1a1a1a;
-  background-color: #3b4a45;
-  line-height: 1.6;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 32px;
-  background-color: #3f4f63;
-  border-bottom: 3px solid #1f2833;
-}
-
-.tittel {
-  font-family: Georgia, serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #111111;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 10px;
-}
-
-nav a {
-  padding: 8px 14px;
-  background-color: #2f3c4c;
-  color: #f0f0f0;
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  border: 1px solid #222c38;
-  transition: background-color 0.2s ease;
-}
-
-nav a:hover {
-  background-color: #4f637a;
-}
-
-.hovedside {
-  display: grid;
-  grid-template-columns: 140px 1fr 140px;
-  min-height: calc(100vh - 68px);
-}
-
-.side-panel {
-  background-color: #3b4a45;
-}
-
-.innhold {
-  background-color: #c8c3bc;
-  border-left: 3px solid #1f2833;
-  border-right: 3px solid #1f2833;
-  padding: 48px 56px 72px;
-}
-
 
 
 .introMunch {
@@ -479,76 +339,6 @@ nav a:hover {
 
 /*solyana sin css*/
 
-*{
-box-sizing: border-box;
-margin: 0;
-padding: 0;
-}
-
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #1a1a1a;
-  background-color: #3b4a45;
-  line-height: 1.6;
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px 32px;
-  background-color: #3f4f63;
-  border-bottom: 3px solid #1f2833;
-}
-
-.tittel {
-  font-family: Georgia, serif;
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: #111111;
-  text-decoration: none;
-}
-
-nav {
-  display: flex;
-  gap: 10px;
-}
-
-nav a {
-  padding: 8px 14px;
-  background-color: #2f3c4c;
-  color: #f0f0f0;
-  text-decoration: none;
-  font-size: 0.85rem;
-  letter-spacing: 0.5px;
-  border: 1px solid #222c38;
-  transition: background-color 0.2s ease;
-}
-
-nav a:hover {
-  background-color: #4f637a;
-}
-
-.hovedside {
-  display: grid;
-  grid-template-columns: 140px 1fr 140px;
-  min-height: calc(100vh - 68px);
-}
-
-.side-panel {
-  background-color: #3b4a45;
-}
-
-.innhold {
-  background-color: #c8c3bc;
-  border-left: 3px solid #1f2833;
-  border-right: 3px solid #1f2833;
-  padding: 48px 56px 72px;
-}
-
 /* kunstverk delen */
 .kunstverk-liste {
   display: grid;
@@ -577,4 +367,25 @@ nav a:hover {
 
 .tekst h2 {
   margin-bottom: 8px;
+}
+
+
+/* Sana sin css */
+
+
+/*Innflytelse del*/
+.tidslinje {
+  width: 3px;
+ height: 65vh;
+  background: grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.tidslinje .prikk {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c5542f;
 }
