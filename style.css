@@ -5,10 +5,11 @@
   font-size: 20px;
 }
 
+
 /* lastet et font fra nettet som blir brukt på headeren */ 
 @font-face {
   font-family: "MinFont";
-  src: url("Font/PlayfairDisplaySC-Regular.ttf")
+  src: url("font/PlayfairDisplaySC-Regular.ttf")
 }
 
 body {
@@ -27,7 +28,7 @@ header {
   padding: 14px 32px;
   background-color: #3f4f63;
   border-bottom: 3px solid #00000052;
-  font-family: "Minfont";
+  font-family: "MinFont";
 }
 
 .tittel {
@@ -273,6 +274,54 @@ main {
 
 /*patrick sin css*/
 
+@keyframes tonInn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+.innhold h1,
+.innhold h2 {
+  animation: tonInn 0.9s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.innhold h3 {
+  animation: tonInn 0.9s ease-out both;
+  animation-delay: 0.6s;
+}
+
+.innhold p {
+  animation: tonInn 0.9s ease-out both;
+  animation-delay: 1s;
+}
+
+
+.bilde-rad img {
+  width: 220px;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.bilde-rad {
+  animation: tonInn 0.9s ease-out both;
+  animation-delay: 1.4s;
+}
+.bilde-rad {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 50px auto 0 auto;
+}
+
+
 
 /*karel sin css*/
 
@@ -282,6 +331,7 @@ main {
   justify-content: space-between;
   align-items: flex-start;
   gap: 32px;
+  position: relative;
 }
 
 .museum-intro-tekst {
@@ -291,7 +341,6 @@ main {
   max-height: 100%;
   height: auto;
   border-radius: 8px;
-  position: relative;
 }
 
 .museum-intro-tekst p {
@@ -373,6 +422,11 @@ main {
   margin-bottom: 20px;
 }
 
+.visiting-info {
+  margin-top: 50px;
+  padding: 12;
+}
+
 .eget-besøk {
   margin-top: 32px;
 }
@@ -384,6 +438,7 @@ main {
   gap: 16px;
   margin: 24px 0;
   margin-bottom: -24px;
+  height: 600px;
 }
 
 /* gjør at bildene tilpasser seg skjermstørrelsen og holder en minimum bredde på 250px. Slik regelen over sier */
@@ -416,10 +471,9 @@ main {
 
 #museum-photo5 {
   max-width: 100%;
-  width: 550px;
+  width: auto;
   height: auto;
   object-fit: cover;
-  align-self: center;
   border-radius: 12px;
   filter: blur(3px);
   transition: filter 0.3s ease, transform 0.4s ease;
@@ -434,6 +488,8 @@ main {
   filter: blur(0);
   transform: scale(1.05);
 }
+
+
 
 /* KI: for å enklere dele opp keyframes og translate egenskaper */
 @keyframes munch-infinity {
@@ -510,363 +566,5 @@ main {
   height: 14px;
   border-radius: 50%;
   background: #c5542f;
-}
-
-/* Zara sin css*/
-
-
-/*
-    KI-assistert kode:
-    ChatGPT ble brukt til feilretting, opprydding,
-    forslag til transitions, keyframes,
-    interaktive følelseskort og responsivt design.
-*/
-
-
-/* felles nettside struktur på alle sidene */
-
-
-/* Introduksjonsseksjon */
-
-.intro {
-    min-height: 390px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 36px;
-    text-align: center;
-    background-color: var(--lys-krem);
-    border-bottom: 2px solid #1f2833;
-
-    animation: vis-inn 0.8s ease-out both;
-}
-
-.overlinje {
-    margin-bottom: 12px;
-    color: var(--rod);
-    font-size: 0.76rem;
-    font-weight: bold;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-}
-
-.intro h1 {
-    max-width: 700px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(1.8rem, 4.5vw, 3.2rem);
-    font-weight: normal;
-    line-height: 1.08;
-}
-
-.intro h1:hover {
-    animation: bolge 1s ease-in-out;
-}
-
-.forside-intro-tekst {
-    max-width: 540px;
-    margin-top: 20px;
-    font-size: 1.05rem;
-}
-
-/* Dekorative former inspirert av Munchs linjer */
-
-.dekorasjon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    height: 65px;
-    margin-bottom: 20px;
-}
-
-.dekorasjon span {
-    display: block;
-    width: 18px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: var(--rod);
-
-    animation: pensel 3s ease-in-out infinite;
-}
-
-.dekorasjon span:nth-child(2) {
-    height: 60px;
-    background-color: var(--mork-gronn);
-    animation-delay: 0.3s;
-}
-
-.dekorasjon span:nth-child(3) {
-    background-color: lab(66.35% 8.44 42.06);
-    animation-delay: 0.6s;
-}
-
-/* Interaktive lenker */
-
-.les-mer {
-    display: inline-block;
-    margin-top: 24px;
-    padding: 10px 16px;
-    color: var(--krem);
-    background-color: var(--mork-gronn);
-    text-decoration: none;
-
-    transition: transform 0.2s ease,
-                background-color 0.2s ease;
-}
-
-.les-mer:hover,
-.les-mer:focus-visible {
-    color: var(--krem);
-    background-color: var(--rod);
-    transform: translateY(-3px);
-}
-
-/* Temakort */
-
-.temaer {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    border-bottom: 2px solid var(--linje);
-}
-
-.temakort {
-    min-height: 230px;
-    padding: 32px;
-
-    transition: background-color 0.25s ease,
-                box-shadow 0.25s ease;
-}
-
-.temakort + .temakort {
-    border-left: 2px solid var(--linje);
-}
-
-.temakort:hover {
-    background-color: var(--lys-krem);
-    box-shadow: inset 0 -5px 0 var(--rod);
-}
-
-.kortnummer {
-    color: var(--rod);
-    font-size: 0.7rem;
-    font-weight: bold;
-    letter-spacing: 0.13em;
-}
-
-.temakort h2,
-.munch-tekst h2,
-.modernisme h2,
-.folelser h2 {
-    margin: 8px 0 12px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.8rem;
-    font-weight: normal;
-}
-
-.temakort p,
-.munch-tekst p,
-.modernisme p {
-    max-width: 620px;
-}
-
-.temakort a {
-    display: inline-block;
-    margin-top: 16px;
-    color: var(--dyp-gronn);
-    font-size: 0.9rem;
-    font-weight: bold;
-    text-underline-offset: 4px;
-
-    transition: color 0.2s ease,
-                transform 0.2s ease;
-}
-
-.temakort a:hover,
-.temakort a:focus-visible {
-    color: var(--rod);
-    transform: translateX(4px);
-}
-
-/* Interaktive følelseskort */
-
-.folelser {
-    padding: 44px 48px;
-    background-color: var(--lys-krem);
-    border-bottom: 2px solid var(--linje);
-}
-
-.folelser-intro {
-    margin-bottom: 24px;
-}
-
-.folelseskort-container {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-    gap: 16px;
-}
-
-.folelseskort {
-    min-width: 0;
-    color: var(--lys-krem);
-    border-radius: 4px;
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-.folelseskort:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.folelseskort summary {
-    padding: 24px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.4rem;
-    cursor: pointer;
-}
-
-.folelseskort p {
-    padding: 0 24px 24px;
-    font-size: 0.95rem;
-}
-
-/* Hver følelse har sitt eget fargeuttrykk */
-
-.angst {
-    background-color: #963e32;
-}
-
-.kjaerlighet {
-    background-color: #884758;
-}
-
-.sorg {
-    background-color: #394e66;
-}
-
-.ensomhet {
-    background-color: #3b4a45;
-}
-
-/* Animasjoner når følelseskortene åpnes */
-
-.folelseskort[open] p {
-    animation: vis-inn 0.5s ease-out both;
-}
-
-.angst[open] summary {
-    animation: bolge 0.6s ease-in-out;
-}
-
-.kjaerlighet[open] summary {
-    animation: puls 0.8s ease-in-out;
-}
-
-/* Tekstseksjoner */
-
-.munch-tekst,
-.modernisme {
-    padding: 44px 48px;
-    border-bottom: 2px solid var(--linje);
-}
-
-.munch-tekst {
-    background-color: #eee8cf;
-}
-
-.modernisme {
-    min-height: 220px;
-    background-color: var(--lys-krem);
-}
-
-/* Bunntekst */
-
-.bunntekst {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px 32px;
-    color: var(--krem);
-    background-color: var(--mork-gronn);
-    font-size: 0.85rem;
-}
-
-.bunntekst a {
-    text-decoration: none;
-    transition: transform 0.2s ease;
-}
-
-.bunntekst a:hover,
-.bunntekst a:focus-visible {
-    text-decoration: underline;
-    transform: translateY(-3px);
-}
-
-/* KEYFRAMES */
-
-/* Innholdet kommer gradvis til syne */
-
-@keyframes vis-inn {
-    from {
-        opacity: 0;
-        transform: translateY(18px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Bølgende bevegelse inspirert av Munch */
-
-@keyframes bolge {
-    0% {
-        transform: rotate(0deg) translateY(0);
-    }
-
-    25% {
-        transform: rotate(-2deg) translateY(-5px);
-    }
-
-    50% {
-        transform: rotate(2deg) translateY(0);
-    }
-
-    75% {
-        transform: rotate(-1deg) translateY(-3px);
-    }
-
-    100% {
-        transform: rotate(0deg) translateY(0);
-    }
-}
-
-/* Bevegelse i de dekorative formene */
-
-@keyframes pensel {
-    0%, 100% {
-        transform: rotate(-15deg) translateY(0);
-    }
-
-    50% {
-        transform: rotate(15deg) translateY(-8px);
-    }
-}
-
-/* Pulserende bevegelse */
-
-@keyframes puls {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.06);
-    }
 }
 
