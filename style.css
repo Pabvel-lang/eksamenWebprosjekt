@@ -1,3 +1,4 @@
+/* Felles strukturen av Momeen */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,9 +13,13 @@
   src: url("font/PlayfairDisplaySC-Regular.ttf")
 }
 
+@font-face {
+  font-family: "Font2";
+  src: url("font/EBGaramond-VariableFont_wght.ttf")
+}
+
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  font-size: 5px;
+  font-family: 'Font2', Arial, sans-serif;
   color: #1a1a1a;
   background-color: #3b4a45;
   line-height: 1.5;
@@ -62,28 +67,22 @@ nav a:hover {
 nav a:focus {
   background-color: #4f637a;
   border-radius: 1px;
-  color: darkred;
+  color: red;
 }
 
-
-.hovedside {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) min(100%, 1200px) minmax(0, 1fr);
-  min-height: calc(100vh - 68px);
-}
-
-aside {
-  background-color: #3b4a45;
-}
 
 main {
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 68px);
   background-color: #c8c3bc;
   border-left: 3px solid #1f2833;
   border-right: 3px solid #1f2833;
   padding: 48px 56px 72px;
 }
 
-/* Momeen sin css */
+/* Forside delen - Momeen sin css */
+
 .intro-Munch {
   display: flex;
   justify-content: space-between;
@@ -92,9 +91,10 @@ main {
 }
 
 .forside-intro-tekst p {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
+/* når du hoverer på bilde av munch så skal den scale inn  */
 @keyframes zoomInn {
   from {
     transform: scale(1);
@@ -104,6 +104,7 @@ main {
   }
 }
 
+/* Denne delen er etter den har scale-et inn, så skal den ta en liten 360deg etter du har sluppet musetasten på bildet */
 @keyframes spinnUt {
   from {
     transform: scale(1.1) rotate(0deg);
@@ -111,7 +112,7 @@ main {
   to {
     transform: scale(1) rotate(360deg);
   }
-} 
+}
 
 .intro-Munch img {
   width: 200px;
@@ -120,37 +121,24 @@ main {
   animation-name: spinnUt;
   animation-duration: 1s;
   animation-timing-function: ease;
+  animation-fill-mode: forwards;
 }
 
 .intro-Munch img:hover {
   animation-name: zoomInn;
-  animation-duration: 0.3s;
+  animation-duration: 0.5s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
 }
 
 .introBilde {
-  flex-shrink: 0;
+  flex-shrink: 0; 
   text-align: center;
 }
 
-.intro-Munch img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  scale: 1;
-  rotate: 0deg;
-  transition: scale 0.3s ease, rotate 0.6s ease;
-}
-
-.intro-Munch img:hover {
-  scale: 1.1;
-  rotate: -360deg;
-  transition: scale 0.3s ease, rotate 0s;
-}
 
 .introBilde p {
-  margin-top: 6px;
+  margin-top: 5px;
 }
 
 
@@ -210,7 +198,7 @@ main {
 /* avsluttning teksten  */
 
 
-.avsluttning {
+.avslutning {
   margin-top: 40px;
 }
 
@@ -255,12 +243,6 @@ main {
   margin-top: auto;
 }
 
-.tema-boks img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  display: block;
-}
 
 .tema-boks h3 {
   padding: 12px 14px 4px;
@@ -272,7 +254,259 @@ main {
 }
 
 
-/*patrick sin css*/
+/*Kunstverk delen - Solyana sin css*/
+
+/* kunstverk delen */
+.kunstverk img {
+  width: 280px;
+  height: 380px;
+  object-fit: contain;
+  animation: vokse 1.5s ease-out;
+}
+
+@keyframes vokse {
+  from {
+    transform: scale(0.7);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+.tekst p {
+  font-size: 20px;
+}
+
+
+
+/* Stil delen - Zahra sin css */
+
+/* Introduksjonsseksjon */
+.introStil {
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 36px;
+  text-align: center;
+  background-color: #f4efe6;
+  border-bottom: 2px solid #1f2833;
+  animation: vis-inn 0.8s ease-out both;
+}
+
+.overlinje {
+  margin-bottom: 12px;
+  color: #963e32;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.introStil h1 {
+  max-width: 700px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 48px;
+  font-weight: normal;
+  line-height: 1.08;
+}
+
+.introStil h1:hover {
+  animation: bolge 1s ease-in-out;
+}
+
+/* Interaktive lenker */
+.les-mer {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 10px 16px;
+  color: #f4efe6;
+  background-color: #3b4a45;
+  text-decoration: none;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.les-mer:hover,
+.les-mer:focus-visible {
+  color: #f4efe6;
+  background-color: #963e32;
+  transform: translateY(-3px);
+}
+
+/* Temakort */
+.temaer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-bottom: 2px solid #1f2833;
+}
+
+.temakort {
+  min-height: 230px;
+  padding: 32px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.temakort + .temakort {
+  border-left: 2px solid #1f2833;
+}
+
+.temakort:hover {
+  background-color: #f4efe6;
+  box-shadow: inset 0 -5px 0 #963e32;
+}
+
+.temakort h2,
+.munch-tekst h2,
+.modernisme h2,
+.folelser h2 {
+  margin: 8px 0 12px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+.temakort p,
+.munch-tekst p,
+.modernisme p {
+  max-width: 620px;
+}
+
+/* Interaktive følelseskort */
+.folelser {
+  padding: 44px 48px;
+  background-color: #f4efe6;
+  border-bottom: 2px solid #1f2833;
+}
+
+.folelser-intro {
+  margin-bottom: 24px;
+}
+
+.folelseskort-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.kort-toggle {
+  display: none;
+}
+
+.kort-tittel {
+  display: block;
+  padding: 24px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.folelseskort {
+  min-width: 0;
+  color: #f4efe6;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.folelseskort:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px #00000033;
+}
+
+.folelseskort p {
+  display: none;
+  padding: 0 24px 24px;
+  font-size: 16px;
+}
+
+.angst {
+  background-color: #963e32;
+}
+
+.kjaerlighet {
+  background-color: #884758;
+}
+
+.sorg {
+  background-color: #394e66;
+}
+
+.ensomhet {
+  background-color: #3b4a45;
+}
+
+/* Animasjoner når følelseskortene åpnes */
+.kort-toggle:checked ~ p {
+  display: block;
+  animation: vis-inn 0.5s ease-out both;
+}
+
+.angst .kort-toggle:checked + .kort-tittel {
+  animation: bolge 0.6s ease-in-out;
+}
+
+.kjaerlighet .kort-toggle:checked + .kort-tittel {
+  animation: puls 0.8s ease-in-out;
+}
+
+/* Tekstseksjoner */
+.munch-tekst,
+.modernisme {
+  padding: 44px 48px;
+  border-bottom: 2px solid #1f2833;
+}
+
+.munch-tekst {
+  background-color: #eee8cf;
+}
+
+.modernisme {
+  min-height: 220px;
+  background-color: #f4efe6;
+}
+
+/* KEYFRAMES */
+@keyframes vis-inn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bolge {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(-2deg) translateY(-5px);
+  }
+  50% {
+    transform: rotate(2deg) translateY(0);
+  }
+  75% {
+    transform: rotate(-1deg) translateY(-3px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes puls {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
+
+/* Historie delen - Patrick sin css*/
 
 @keyframes tonInn {
   from {
@@ -284,8 +518,6 @@ main {
     transform: translateY(0);
   }
 }
-
-
 
 .innhold h1,
 .innhold h2 {
@@ -303,6 +535,15 @@ main {
   animation-delay: 1s;
 }
 
+.bilde-rad {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin: 50px auto 0 auto;
+  animation: tonInn 0.9s ease-out both;
+  animation-delay: 1.4s;
+}
 
 .bilde-rad img {
   width: 220px;
@@ -310,20 +551,110 @@ main {
   object-fit: cover;
   border-radius: 8px;
 }
-.bilde-rad {
-  animation: tonInn 0.9s ease-out both;
-  animation-delay: 1.4s;
+
+.bilde-rad .signatur {
+  display: block;
+  width: 160px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 0;
+  margin: 10px auto 0 auto;
+  opacity: 0;
 }
-.bilde-rad {
+
+/* Klikk-animasjonen på signaturen er laget med hjelp av KI */
+@keyframes spinnInn {
+  from {
+    opacity: 0;
+    transform: rotate(-360deg) scale(0.2);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.bilde-rad .signatur-boks {
+  cursor: pointer;
+}
+
+.bilde-rad .signatur-boks:focus .signatur {
+  animation: spinnInn 1s ease-out both;
+}
+
+/* innflytelse delen - Sana sin del  */
+
+.tidslinje-layout {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 50px auto 0 auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.tidslinje {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  flex: 2 1 460px;
+  min-height: 65vh;
+  gap: 24px;
+  border-left: 3px solid grey;
+}
+
+/* Ki.sikt css for teksten ved prikken */
+.tidslinje .prikk {
+  position: relative;
+  padding-left: 25px;
+}
+
+.tidslinje .prikk::before {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: -8px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #c5542f;
+}
+
+/* Fikk hjelp av Ki.sikt med innfading og overgang ved hover */
+.tidslinje-bilder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 190px;
+  min-width: 0;
+  gap: 20px;
+  animation: fade-inn 0.8s;
+}
+
+.tidslinje-bilder img {
+  width: 190px;
+  max-width: 100%;
+  height: auto;
+  transition: opacity 0.3s;
+}
+
+.tidslinje-bilder img:hover {
+  opacity: 0.3;
+}
+
+@keyframes fade-inn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 
 
-/*karel sin css*/
+
+/* museet delen - karel sin css*/
 
 
 .introMunch {
@@ -332,6 +663,13 @@ main {
   align-items: flex-start;
   gap: 32px;
   position: relative;
+}
+
+#museum-title {
+  min-width: 100%;
+  width: auto;
+  height: auto;
+  font-size: 36px;
 }
 
 .museum-intro-tekst {
@@ -345,7 +683,6 @@ main {
 
 .museum-intro-tekst p {
   margin-top: 12px;
-  gap: 12px;
 }
 
 .intro-bilde {
@@ -362,9 +699,9 @@ main {
   position: absolute;
   max-width: 100%;
   width: auto;
-  height: 120px;
-  left: 50%px;
-  top: 70%;
+  height: 80px;
+  left: 1%;
+  top: 73%;
   animation: munch-infinity 6s linear infinite;
 }
 
@@ -372,7 +709,6 @@ main {
   display: block;
   max-width: 100%;
   width: 100%;
-  max-width: 100%;
   height: auto;
   border-radius: 8px;
   transition: transform 0.3s ease, filter 0.3s ease;
@@ -424,21 +760,29 @@ main {
 
 .visiting-info {
   margin-top: 50px;
-  padding: 12;
+  padding: 12px;
 }
 
 .eget-besøk {
   margin-top: 32px;
 }
 
+.eget-besøk p {
+  margin: 2%;
+}
+
 .museum-photos {
   display: grid;
-  /* KI: gjør at bildene tilpasser seg skjermstørrelsen og holder en minimum bredde på 250px */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   margin: 24px 0;
   margin-bottom: -24px;
-  height: 600px;
+}
+
+.photo-tekst {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 /* gjør at bildene tilpasser seg skjermstørrelsen og holder en minimum bredde på 250px. Slik regelen over sier */
@@ -471,7 +815,7 @@ main {
 
 #museum-photo5 {
   max-width: 100%;
-  width: auto;
+  width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 12px;
@@ -479,14 +823,27 @@ main {
   transition: filter 0.3s ease, transform 0.4s ease;
 }
 
+#museum-photo6 {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: blur(3px);
+  transition: filter 0.3s ease, transform 0.4s ease;
+}
 
 #museum-photo1:hover,
 #museum-photo2:hover,
 #museum-photo3:hover,
 #museum-photo4:hover,
-#museum-photo5:hover {
+#museum-photo5:hover,
+#museum-photo6:hover {
   filter: blur(0);
   transform: scale(1.05);
+}
+
+.museum-website-link {
+  margin: 12px;
 }
 
 
@@ -515,56 +872,4 @@ main {
 
 
 
-/*solyana sin css*/
-
-/* kunstverk delen */
-.kunstverk-liste {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
-
-.kunstverk {
-  min-height: 75vh;
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  border-bottom: 2px solid #999;
-  padding: 25px 0;
-}
-
-.kunstverk img {
-  width: 280px;
-  height: 380px;
-  object-fit: contain;
-}
-
-.tekst {
-  flex: 1;
-}
-
-.tekst h2 {
-  margin-bottom: 8px;
-}
-
-
-/* Sana sin css */
-
-
-/*Innflytelse del*/
-.tidslinje {
-  width: 3px;
-  height: 65vh;
-  background: grey;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.tidslinje .prikk {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: #c5542f;
-}
 

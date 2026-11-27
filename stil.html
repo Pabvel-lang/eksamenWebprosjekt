@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="no">
 
@@ -6,40 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Utforsk Edvard Munch, kunsten hans og modernismen.">
-    <title>Edvard Munch – Munchs verden av følelser</title>
-    <link rel="stylesheet" href="style2.css">
+    <title>Munchs verden av følelser</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<!--
-    KI-assistert kode:
-    ChatGPT ble brukt til gjennomgang av opprinnelig kode,
-    feilretting og forslag til struktur, tilgjengelighet
-    og interaktive elementer.
--->
 
 <body>
 
-   <header>
-    <a href="index.html" class="tittel">Edvard Munch</a>
-    <nav>
-      <a href="kunstverk.html">KUNSTVERK</a>
-      <a href="stil.html">STIL</a>
-      <a href="historie.html">HISTORIE</a>
-      <a href="innflytelse.html">INNFLYTELSE</a>
-      <a href="museet.html">MUSEET</a>
-    </nav>
-  </header>
+    <header>
+        <a href="index.html" class="tittel">Edvard Munch</a>
+        <nav>
+            <a href="kunstverk.html">KUNSTVERK</a>
+            <a href="stil.html">STIL</a>
+            <a href="historie.html">HISTORIE</a>
+            <a href="innflytelse.html">INNFLYTELSE</a>
+            <a href="museet.html">MUSEET</a>
+        </nav>
+    </header>
 
-  <div class="hovedside">
-    <aside class="side-panel"></aside>
-
-  <main>
+    
+        <main>
 
             <!-- Introduksjon -->
-            <section class="intro" aria-labelledby="sidetittel">
-
-            
-                <p id="overlinje">
+            <section class="introStil" aria-labelledby="sidetittel">
+                <p class="overlinje">
                     Kunstner · Norge · 1863–1944
                 </p>
 
@@ -51,111 +39,80 @@
                     Utforsk Munchs historie
                     <span aria-hidden="true">→</span>
                 </a>
-
             </section>
 
             <!-- Temakort -->
             <section class="temaer" aria-label="Temaer i Munchs kunst">
-
                 <article class="temakort">
-
-                    
-
                     <h2>Stil</h2>
-
                     <p>
-                        ved hjelp av sterke farger utrykket munch sine indre følelser og tanker. klare linjer og former som er enkle og forstå.
+                        Ved hjelp av sterke farger uttrykte Munch sine indre følelser og tanker, med klare linjer og former som er enkle å forstå.
                     </p>
-
                 </article>
 
                 <article class="temakort">
-
-                 
-
                     <h2>Tema</h2>
-
                     <p>
-                        mange av verkene til munch tar opp temaer som Kjærlighet, ensomhet, angst og store
-                        forandringer og vendepunkter i livet.
+                        Mange av verkene til Munch tar opp temaer som kjærlighet, ensomhet, angst og store forandringer og vendepunkter i livet.
                     </p>
-
                 </article>
-
             </section>
 
             <!-- Interaktive følelseskort -->
-            <section class="folelser" aria-labelledby="folelser-tittel">
+    <section class="folelser" aria-labelledby="folelser-tittel">
+        <p class="overlinje">
+            En verden av følelser
+        </p>
 
-                <p class="overlinje">
-                    En verden av følelser
-                </p>
+        <h2 id="folelser-tittel">
+            Hva føler du?
+        </h2>
 
-                <h2 id="folelser-tittel">
-                    Hva føler du?
-                </h2>
+        <p class="folelser-intro">
+            Trykk på en følelse for å utforske hvordan den kommer til uttrykk i Munchs kunst.
+        </p>
 
-                <p class="folelser-intro">
-                    Trykk på en følelse for å utforske hvordan
-                    den kommer til uttrykk i Munchs kunst.
-                </p>
+          <div class="folelseskort-container">
 
-                <div class="folelseskort-container">
+    <div class="folelseskort angst">
+        <input type="checkbox" id="kort-angst" class="kort-toggle">
+        <label for="kort-angst" class="kort-tittel">Angst</label>
+        <p>
+            Gjennom sterke farger og urolige linjer uttrykte Munch frykt og indre uro. Skrik er et kjent eksempel på dette.
+        </p>
+    </div>
 
-                    <details class="folelseskort angst">
+    <div class="folelseskort kjaerlighet">
+        <input type="checkbox" id="kort-kjaerlighet" class="kort-toggle">
+        <label for="kort-kjaerlighet" class="kort-tittel">Kjærlighet</label>
+        <p>
+            Munch utforsket kjærlighetens nærhet, sårbarhet og smerte gjennom kunsten.
+        </p>
+    </div>
 
-                        <summary>Angst</summary>
+    <div class="folelseskort sorg">
+        <input type="checkbox" id="kort-sorg" class="kort-toggle">
+        <label for="kort-sorg" class="kort-tittel">Sorg</label>
+        <p>
+            Tap og sykdom preget Munchs liv og ble viktige motiver i flere av kunstverkene hans.
+        </p>
+    </div>
 
-                        <p>
-                            Gjennom sterke farger og urolige linjer
-                            uttrykte Munch frykt og indre uro.
-                            Skrik er et kjent eksempel på dette.
-                        </p>
+    <div class="folelseskort ensomhet">
+        <input type="checkbox" id="kort-ensomhet" class="kort-toggle">
+        <label for="kort-ensomhet" class="kort-tittel">Ensomhet</label>
+        <p>
+            Ensomme mennesker og stille landskap kan uttrykke avstand, isolasjon og lengsel etter fellesskap.
+        </p>
+    </div>
 
-                    </details>
+    </div>
+    </section>
 
-                    <details class="folelseskort kjaerlighet">
 
-                        <summary>Kjærlighet</summary>
-
-                        <p>
-                            Munch utforsket kjærlighetens nærhet,
-                            sårbarhet og smerte gjennom kunsten.
-                        </p>
-
-                    </details>
-
-                    <details class="folelseskort sorg">
-
-                        <summary>Sorg</summary>
-
-                        <p>
-                            Tap og sykdom preget Munchs liv
-                            og ble viktige motiver i flere
-                            av kunstverkene hans.
-                        </p>
-
-                    </details>
-
-                    <details class="folelseskort ensomhet">
-
-                        <summary>Ensomhet</summary>
-
-                        <p>
-                            Ensomme mennesker og stille landskap
-                            kan uttrykke avstand, isolasjon
-                            og lengsel etter fellesskap.
-                        </p>
-
-                    </details>
-
-                </div>
-
-            </section>
 
             <!-- Munchs liv og kunst -->
             <section class="munch-tekst" aria-labelledby="livet-tittel">
-
                 <p class="overlinje">
                     Livet og kunsten
                 </p>
@@ -165,18 +122,13 @@
                 </h2>
 
                 <p>
-                    Munch hentet ofte inspirasjon fra egne erfaringer
-                    og menneskene rundt seg. I bildene sine utforsket
-                    han hvordan sorg, kjærlighet og angst kan
-                    oppleves innenfra.
+                    Munch hentet ofte inspirasjon fra egne erfaringer og menneskene rundt seg. I bildene sine utforsket han hvordan sorg, kjærlighet og angst kan oppleves innenfra.
                 </p>
-
             </section>
 
             <!-- Modernismen -->
             <section class="modernisme" aria-labelledby="modernisme-tittel">
-
-                <p id="overlinje">
+                <p class="overlinje">
                     Kunsthistorie
                 </p>
 
@@ -185,20 +137,13 @@
                 </h2>
 
                 <p>
-                    Munch var med på å åpne nye veier i kunsten.
-                    I stedet for å gjengi verden helt realistisk,
-                    lot han farger og former formidle hvordan
-                    verden kunne føles.
+                    Munch var med på å åpne nye veier i kunsten. I stedet for å gjengi verden helt realistisk, lot han farger og former formidle hvordan verden kunne føles.
                 </p>
-
             </section>
 
-     </main>
+        </main>
 
-    <aside class="side-panel"></aside>
-  </div>
-
-
+       
 
 </body>
 
